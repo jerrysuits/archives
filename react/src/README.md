@@ -2,7 +2,6 @@
 # Author -Gerald Obede
 
 This ia a website that alloe=w you to upload your pictures
-Encountered an issue with the original git repository where the backend file was not accesible.Solution- Deinitialized and created a new github repo
 
 ## Features
 
@@ -19,8 +18,6 @@ Encountered an issue with the original git repository where the backend file was
 1. Run the project: `npm start`
 2. Open your web browser and visit: `http://localhost:3000`
 For the backend run rackup config.ru in your terminal and visit `http://localhost:9292`
-
-
 
 
 ## License
@@ -44,4 +41,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-# archives
