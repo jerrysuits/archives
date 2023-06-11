@@ -35,6 +35,12 @@ function Post() {
   }, []);
 
   const handleImageUpload = () => {
+    if (!current_user) {
+      // User is not authenticated, display an error message or redirect to the login page
+      Swal.fire('Error', 'Please sign in or to upload an image!If you do not have an account,then register', 'error');
+      return;
+    }
+
     if (selectedImage) {
       const formData = new FormData();
       formData.append('image_file', selectedImage);
@@ -58,79 +64,42 @@ function Post() {
     }
   };
 
-  const handleCommentSubmit = () => {
-    if (comment) {
-      const formData = new FormData();
-      formData.append('content', comment);
-      formData.append('user_id', current_user.id); // Replace with the actual user ID
-      formData.append('picture_id', '1'); // Replace with the actual picture ID
+  // const handleCommentSubmit = () => {
+  //   if (comment) {
+  //     const formData = new FormData();
+  //     formData.append('content', comment);
+  //     formData.append('user_id', current_user.id); // Replace with the actual user ID
+  //     formData.append('picture_id', '1'); // Replace with the actual picture ID
 
-      fetch('/comments/newcomment', {
-        method: 'POST',
-        body: formData,
-      })
-        .then(response => response.json())
-        .then(data => {
-          console.log('Comment created:', data);
-          setComment('');
-          // Refresh the comments by making another request
-          fetch('/comments')
-            .then(response => response.json())
-            .then(data => {
-              console.log('Comments:', data);
-              setComments(data);
-            })
-            .catch(error => {
-              console.error('Error fetching comments:', error);
-            });
-        })
-        .catch(error => {
-          console.error('Error creating comment:', error);
-        });
-    }
-  };
+  //     fetch('/comments/newcomment', {
+  //       method: 'POST',
+  //       body: formData,
+  //     })
+  //       .then(response => response.json())
+  //       .then(data => {
+  //         console.log('Comment created:', data);
+  //         setComment('');
+  //         // Refresh the comments by making another request
+  //         fetch('/comments')
+  //           .then(response => response.json())
+  //           .then(data => {
+  //             console.log('Comments:', data);
+  //             setComments(data);
+  //           })
+  //           .catch(error => {
+  //             console.error('Error fetching comments:', error);
+  //           });
+  //       })
+  //       .catch(error => {
+  //         console.error('Error creating comment:', error);
+  //       });
+  //   }
+  // };
 
-  const handleDeletePicture = (picture_id) => {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: 'You will not be able to recover this image!',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'No, keep it',
-    }).then((result) => {
-      if (result.isConfirmed) {
-        fetch(`/pictures/delete/${picture_id}`, {
-          method: 'DELETE',
-        })
-          .then(response => response.json())
-          .then(data => {
-            console.log('Picture deleted:', data);
-            Swal.fire('Deleted!', 'Image has been deleted.', 'success');
-            // Refresh the pictures by making another request
-            fetch('/pictures')
-              .then(response => response.json())
-              .then(data => {
-                console.log('Pictures:', data);
-                setPictures(data);
-              })
-              .catch(error => {
-                console.error('Error fetching pictures:', error);
-              });
-          })
-          .catch(error => {
-            console.error('Error deleting picture:', error);
-            Swal.fire('Great', 'Image deleted refresh page to update');
-          });
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire('Cancelled', 'Image deletion was cancelled', 'info');
-      }
-    });
-  };
 
   return (
     <div>
-      <h1></h1>
+    
 
       {selectedImage && (
         <div className='text-center rounded '>
@@ -171,21 +140,11 @@ function Post() {
 
       <br />
       <br />
-      <div >
-      <h2 className='text-center'>Pictures:</h2>
-      {pictures.map(picture => (
-        <div key={picture.id} className='text-center'>
-          <img src={picture.image_file} alt="Picture" width="400px " className='rounded img-fluid' />
-          <p>By: {picture.user ? picture.user.username : 'Unknown User'}</p>
-          <button className=' mt-1 mb-2 btn bg-danger text-white rounded-pill' onClick={() => handleDeletePicture(picture.id)}>Delete</button>
-        </div>
-      ))}
-      </div>
 
       <br />
       <br />
 
-      <h2>Comments:</h2>
+      <h2></h2>
       {comments && comments.map(comment => (
         <div key={comment.id}>
           <p>{comment.content}</p>

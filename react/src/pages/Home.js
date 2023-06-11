@@ -47,7 +47,7 @@ function Home() {
     };
 
     fetchUsernames();
-  }, []); // Empty dependency array to prevent infinite loop
+  }, []); 
 
   return (
     <div
@@ -68,7 +68,11 @@ function Home() {
             textAlign: 'center',
             transition: 'transform 5s ease',
             cursor: 'pointer',
+            
           }}
+          
+          
+          
           onClick={() => handleImageClick(picture)}
         >
           <img
@@ -87,7 +91,7 @@ function Home() {
               fontSize: '14px',
             }}
           >
-            By: {picture.username || 'Unknown'}
+          
           </p>
         </div>
       ))}
@@ -100,6 +104,7 @@ function Home() {
             right: '0',
             bottom: '0',
             display: 'flex',
+            borderRadius: '30px',
             justifyContent: 'center',
             alignItems: 'center',
             backgroundColor: 'rgba(0, 0, 0, 0.7)',
@@ -114,12 +119,13 @@ function Home() {
             style={{
               maxWidth: '90vw',
               maxHeight: '90vh',
-              width: 'auto',
-              height: 'auto',
+              width: '80%',
+              height: '80%',
               objectFit: 'contain',
-              borderRadius: '20px',
+              borderRadius: '30px',
               opacity: '1',
               transition: 'opacity 5s ease',
+              imageRendering: 'smooth'
             }}
           />
         </div>

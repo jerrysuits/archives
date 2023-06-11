@@ -12,6 +12,7 @@ function Guide() {
           <li>Enter the image URL in the designated text field or choose a local file using the provided upload button.</li>
           <li>Add any comments or description related to the image in the comment section.</li>
           <li>Click the "Upload Image" button to share your post.</li>
+          <li>See yourpicture in home</li>
         </ul>
         Login and Sign up:
         <ul>

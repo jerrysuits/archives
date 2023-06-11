@@ -9,7 +9,7 @@ export function AuthProvider({children})
 {
     const nav = useNavigate()
     const [onChange, setonChange] = useState(false)
-    const [current_user, set_currentUser] =useState()
+    const [current_user, set_currentUser] =useState(null)
 
     // Login
     const login = (username, password) =>{

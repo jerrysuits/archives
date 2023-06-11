@@ -81,7 +81,7 @@ export default function Navbar() {
                         height="50"
                         className="rounded-circle"
                       />
-                      <span className="d-none d-sm-inline mx-1">user</span>
+                      <span className="d-none d-sm-inline mx-1">{current_user.username}</span>
                     </a>
                     <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
                       <li>
@@ -91,6 +91,9 @@ export default function Navbar() {
                         <a className="dropdown-item text-light" onClick={() => logout()}>
                           Sign out
                         </a>
+                        <Link to="/userposts" className="text-light dropdown-item">
+                      My posts
+                    </Link>
                       </li>
                     </ul>
                   </div>

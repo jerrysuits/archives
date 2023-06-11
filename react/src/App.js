@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import { AuthProvider } from './context/AuthContext';
 import { PostProvider } from './context/PostContext';
+import UserPosts from './pages/UserPosts';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path="/guide" element={<Guide/>} />
           <Route path="/post" element={<Post/>} />
           <Route path="/register" element={<Register/>} />
+          <Route path="/userposts" element={<UserPosts/>} />
           <Route path="/login" element={<Login/>} />
         
       </Route>

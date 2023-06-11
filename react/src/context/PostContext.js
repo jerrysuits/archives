@@ -81,7 +81,9 @@ export function PostProvider({children})
      setPictures(response)
         
     })
-}, [onchange])
+}, 
+
+[onchange])
 
 
    const contextData = {
