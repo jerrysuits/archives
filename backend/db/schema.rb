@@ -10,6 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2023_06_06_094342) do
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "picture_id"
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["picture_id"], name: "index_comments_on_picture_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "pictures", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "image_file"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_pictures_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "comments", "pictures"
+  add_foreign_key "comments", "users"
+  add_foreign_key "pictures", "users"
 end
