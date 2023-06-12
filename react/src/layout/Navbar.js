@@ -17,8 +17,8 @@ export default function Navbar() {
             The Archive
           </a>
           <button
-            className="navbar-toggler"
-            type="button"
+            className="navbar-toggler bg-white"
+            type="button bg-white"
             data-bs-toggle="collapse"
             data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"

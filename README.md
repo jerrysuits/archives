@@ -11,8 +11,7 @@ Encountered an issue with the original git repository where the backend file was
 - Able to post a picture by putting its url
 - Able to delete a picture
 
-The backend is deployed to https://backend-deployments.onrender.com/
-
+The backend is deployed to https://backend-deployment-sm6z.onrender.com/
 
 
 
