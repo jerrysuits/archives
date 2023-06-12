@@ -11,14 +11,9 @@ Encountered an issue with the original git repository where the backend file was
 - Able to post a picture by putting its url
 - Able to delete a picture
 
+The backend is deployed to https://backend-deployments.onrender.com/
 
-## Usage
 
-[Deployment to backend was a problem so you will have to run it locally]
-
-1. Run the project: `npm start`
-2. Open your web browser and visit: `http://localhost:3000`
-For the backend run rackup config.ru in your terminal and visit `http://localhost:9292`
 
 
 
