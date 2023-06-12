@@ -145,7 +145,7 @@ function Post() {
       <br />
       <br />
 
-      <h2></h2>
+      <h2></h2>//
       {comments && comments.map(comment => (
         <div key={comment.id}>
           <p>{comment.content}</p>

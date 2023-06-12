@@ -20,6 +20,9 @@ This ia a website that alloe=w you to upload your pictures
 For the backend run rackup config.ru in your terminal and visit `http://localhost:9292`
 
 
+## Future plans
+Implement the comment functionality
+
 ## License
 
 Copyright (c) <2023> <cGerald Obede>
