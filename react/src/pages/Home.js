@@ -5,7 +5,7 @@ function Home() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
-    fetch('/pictures')
+    fetch('https://backend-deployment-sm6z.onrender.com//pictures')
       .then(response => response.json())
       .then(data => {
         console.log('Pictures:', data);
@@ -18,7 +18,7 @@ function Home() {
 
   const fetchUsername = async (id) => {
     try {
-      const response = await fetch(`/users/${id}`);
+      const response = await fetch(`https://backend-deployment-sm6z.onrender.com//users/${id}`);
       const user = await response.json();
       return user.username;
     } catch (error) {

@@ -13,7 +13,7 @@ export function PostProvider({children})
 
    // Add a Picture
    const AddPicture = (userid, image_file) =>{
-    fetch("/pictures/newpicture", {
+    fetch("https://backend-deployment-sm6z.onrender.com//pictures/newpicture", {
         method: "POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({user_id:userid})
@@ -51,7 +51,7 @@ export function PostProvider({children})
 }
   // Delete Picture 
   const deletePicture = (id) =>{
-    fetch(`/pictures/delete/${id}`, {
+    fetch(`https://backend-deployment-sm6z.onrender.com//pictures/delete/${id}`, {
         method: "DELETE",
     })
     .then((res)=>res.json())
@@ -72,7 +72,7 @@ export function PostProvider({children})
 
   // Fetch pictures
   useEffect(()=>{
-    fetch("/pictures", {
+    fetch("https://backend-deployment-sm6z.onrender.com//pictures", {
         method: "GET",
         headers: {"Content-Type":"application/json"}
     })

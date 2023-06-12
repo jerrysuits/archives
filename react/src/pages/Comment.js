@@ -7,33 +7,33 @@ function Comment() {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetch('/pictures') // Replace with your API endpoint to fetch the picture
+    fetch('https://backend-deployment-sm6z.onrender.com//pictures')
       .then(response => response.json())
       .then(data => {
-        // Assuming the response contains the picture data
+      
         setPicture(data.image_file);
       })
       .catch(error => {
         console.error('Error fetching picture:', error);
-        // Handle the error
+        
       });
 
-    fetch('/comments') // Replace with your API endpoint to fetch the comments
+    fetch('https://backend-deployment-sm6z.onrender.com//comments') 
       .then(response => response.json())
       .then(data => {
-        // Assuming the response contains the comments data
+      
         setComments(data);
       })
       .catch(error => {
         console.error('Error fetching comments:', error);
-        // Handle the error
+       
       });
   }, []);
 
   const handleCommentSubmit = () => {
-    // Assuming you have the picture ID and user ID available
-    const pictureId = 'YOUR_PICTURE_ID'; // Replace with the actual picture ID
-    const userId = 'YOUR_USER_ID'; // Replace with the actual user ID
+ 
+    const pictureId = 'YOUR_PICTURE_ID'; 
+    const userId = 'YOUR_USER_ID'; 
 
     const formData = new FormData();
     formData.append('comment', comment);
@@ -47,14 +47,13 @@ function Comment() {
       .then(response => response.json())
       .then(data => {
         console.log('Comment added:', data);
-        // Handle the response from the API
-        // For example, you can update the comments state with the new comment
+  
         setComments(prevComments => [...prevComments, data]);
         setComment('');
       })
       .catch(error => {
         console.error('Error adding comment:', error);
-        // Handle the error
+       
       });
   };
 

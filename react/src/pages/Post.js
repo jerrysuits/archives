@@ -13,7 +13,7 @@ function Post() {
   const nav = useNavigate();
 
   useEffect(() => {
-    fetch('/pictures')
+    fetch('https://backend-deployment-sm6z.onrender.com//pictures')
       .then(response => response.json())
       .then(data => {
         console.log('Pictures:', data);
@@ -23,7 +23,7 @@ function Post() {
         console.error('Error fetching pictures:', error);
       });
 
-    fetch('/comments')
+    fetch('https://backend-deployment-sm6z.onrender.com//comments')
       .then(response => response.json())
       .then(data => {
         console.log('Comments:', data);
@@ -36,7 +36,6 @@ function Post() {
 
   const handleImageUpload = () => {
     if (!current_user) {
-      // User is not authenticated, display an error message or redirect to the login page
       Swal.fire('Error', 'Please sign in or to upload an image!If you do not have an account,then register', 'error');
       return;
     }
@@ -46,7 +45,7 @@ function Post() {
       formData.append('image_file', selectedImage);
       formData.append('user_id', current_user.id);
 
-      fetch('/pictures/newpicture', {
+      fetch('https://backend-deployment-sm6z.onrender.com//pictures/newpicture', {
         method: 'POST',
         body: formData,
       })
