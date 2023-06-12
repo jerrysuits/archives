@@ -13,7 +13,7 @@ export function AuthProvider({children})
 
     // Login
     const login = (username, password) =>{
-        fetch("https://backend-deployment-sm6z.onrender.com//auth/login", {
+        fetch("/auth/login", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
             body: JSON.stringify({username, password})
@@ -51,7 +51,7 @@ export function AuthProvider({children})
     }
     // Logout
     const logout = () => {
-     fetch("https://backend-deployment-sm6z.onrender.com//auth/logout", {
+     fetch("/auth/logout", {
        method: "POST",
        headers: { "Content-Type": "application/json" },
      })
@@ -68,7 +68,7 @@ export function AuthProvider({children})
 
     // Fetch current user
     useEffect(() => {
-     fetch("https://backend-deployment-sm6z.onrender.com//current_user", {
+     fetch("/current_user", {
        method: "GET",
        headers: { "Content-Type": "application/json" },
      })

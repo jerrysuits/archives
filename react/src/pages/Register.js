@@ -16,7 +16,7 @@ export default function Register() {
     };
 
     try {
-      const response = await fetch('https://backend-deployment-sm6z.onrender.com/users/newuser', {
+      const response = await fetch('users/newuser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

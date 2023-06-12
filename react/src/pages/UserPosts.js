@@ -11,7 +11,7 @@ function UserPosts() {
     const fetchUserPictures = async () => {
       try {
         if (current_user && current_user.id) {
-          const response = await fetch(`https://backend-deployment-sm6z.onrender.com//pictures?user_id=${current_user.id}`);
+          const response = await fetch(`/pictures?user_id=${current_user.id}`);
           const data = await response.json();
           setUserPictures(data);
         }
@@ -37,7 +37,7 @@ function UserPosts() {
       cancelButtonText: 'No, keep it',
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://backend-deployment-sm6z.onrender.com//pictures/delete/${picture_id}`, {
+        fetch(`/pictures/delete/${picture_id}`, {
           method: 'DELETE',
         })
           .then(response => response.json())

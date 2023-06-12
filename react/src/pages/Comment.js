@@ -7,21 +7,21 @@ function Comment() {
   const [comments, setComments] = useState([]);
 
   useEffect(() => {
-    fetch('https://backend-deployment-sm6z.onrender.com//pictures')
+    fetch('/pictures')
       .then(response => response.json())
       .then(data => {
-      
+     
         setPicture(data.image_file);
       })
       .catch(error => {
         console.error('Error fetching picture:', error);
-        
+    
       });
 
-    fetch('https://backend-deployment-sm6z.onrender.com//comments') 
+    fetch('/comments')
       .then(response => response.json())
       .then(data => {
-      
+        
         setComments(data);
       })
       .catch(error => {
@@ -31,8 +31,7 @@ function Comment() {
   }, []);
 
   const handleCommentSubmit = () => {
- 
-    const pictureId = 'YOUR_PICTURE_ID'; 
+   
     const userId = 'YOUR_USER_ID'; 
 
     const formData = new FormData();
@@ -47,13 +46,13 @@ function Comment() {
       .then(response => response.json())
       .then(data => {
         console.log('Comment added:', data);
-  
+
         setComments(prevComments => [...prevComments, data]);
         setComment('');
       })
       .catch(error => {
         console.error('Error adding comment:', error);
-       
+    
       });
   };
 

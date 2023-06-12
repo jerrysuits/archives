@@ -13,7 +13,7 @@ function Post() {
   const nav = useNavigate();
 
   useEffect(() => {
-    fetch('https://backend-deployment-sm6z.onrender.com//pictures')
+    fetch('/pictures')
       .then(response => response.json())
       .then(data => {
         console.log('Pictures:', data);
@@ -23,7 +23,7 @@ function Post() {
         console.error('Error fetching pictures:', error);
       });
 
-    fetch('https://backend-deployment-sm6z.onrender.com//comments')
+    fetch('/comments')
       .then(response => response.json())
       .then(data => {
         console.log('Comments:', data);
@@ -45,7 +45,7 @@ function Post() {
       formData.append('image_file', selectedImage);
       formData.append('user_id', current_user.id);
 
-      fetch('https://backend-deployment-sm6z.onrender.com//pictures/newpicture', {
+      fetch('/pictures/newpicture', {
         method: 'POST',
         body: formData,
       })
