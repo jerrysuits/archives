@@ -85,9 +85,6 @@ export default function Navbar() {
                     </a>
                     <ul className="dropdown-menu dropdown-menu-dark text-small shadow">
                       <li>
-                      <a className="dropdown-item">
-                          Profile
-                        </a>
                         <a className="dropdown-item text-light" onClick={() => logout()}>
                           Sign out
                         </a>

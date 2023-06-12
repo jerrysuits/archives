@@ -16,12 +16,12 @@ export default function Login()
   return (
     <div className="container my-auto">
        < div className="container d-flex justify-content-center align-items-center vh-100">
-        
+        <h1 className='mb-5 p-5'>LOGIN</h1>
         <form className='col-sm-6 bg-light rounded p-4 mt-5 border bg-dark' onSubmit={handleSubmit}>
             
             <div className="form-group mt-3">
                 <label>Username</label>
-                <input type="text" onChange={(e)=> setUsername(e.target.value) } className="form-control" placeholder="Enter username" />
+                <input type="text" onChange={(e)=> setUsername(e.target.value) } className="form-control text-align-center" placeholder="Enter username" />
             </div>
             <div className="form-group mt-3">
                 <label>Password</label>

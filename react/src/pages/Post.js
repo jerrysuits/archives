@@ -120,6 +120,7 @@ function Post() {
     value={selectedImage}
     onChange={event => setSelectedImage(event.target.value)}
   />
+  
 </div>
 
       <br />

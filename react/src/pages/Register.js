@@ -32,7 +32,7 @@ export default function Register() {
         if (responseData.error) {
           Swal.fire('Error', responseData.error, 'error');
         } else if (responseData.success) {
-          nav('/');
+          nav('/login');
           Swal.fire('Great', responseData.success, 'success.');
           setOnChange(!onChange);
         } else {
@@ -59,7 +59,7 @@ export default function Register() {
           className="col-sm-6 bg-light rounded p-4 mt-5 border bg-dark"
           onSubmit={handleFormSubmit}
         >
-          <h3>Login</h3>
+         
           <div className="form-group mt-3">
             <label>Username</label>
             <input
