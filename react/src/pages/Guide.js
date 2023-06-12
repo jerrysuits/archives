@@ -5,6 +5,14 @@ function Guide() {
     <div>
       <h1>Guide Page</h1>
       <p>
+        Home page
+      <ul>
+          <li>Here you will see your posta and those from other users.</li>
+          <li>If you see an image you like click on it and it wil enlarge.</li>
+
+        </ul>
+      </p>
+      <p>
         Post Page:
         <ul>
           <li>To share a post, click on the "Post" link in the navigation menu.</li>
@@ -20,7 +28,7 @@ function Guide() {
           <li>Enter your username and password to log in.</li>
           <li>If you are a new user, click on the "Sign up" link in the navigation menu.</li>
           <li>Provide the required information, such as username, email, and password, to create a new account.</li>
-          <li>After user registration is successful ,once again login to get o your account</li>
+          <li>After user registration is successful ,once again login to get to your account</li>
           <li>After successful login or sign up, you will have access to additional features and functionalities.</li>
         </ul>
       </p>
