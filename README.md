@@ -1,7 +1,7 @@
 # Photo archive
 # Author -Gerald Obede
 
-This ia a website that alloe=w you to upload your pictures
+This ia a website that allows you to upload your pictures
 Encountered an issue with the original git repository where the backend file was not accesible.Solution- Deinitialized and created a new github repo
 
 ## Features
@@ -13,7 +13,8 @@ Encountered an issue with the original git repository where the backend file was
 
 The backend is deployed to https://backend-deployment-sm6z.onrender.com/
 
-
+Clone the repo then run npm install to install dependencies.
+To start run npm start
 
 
 
